@@ -1,0 +1,249 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sessi",
+				"session_start"
+			],
+			[
+				"pa",
+				"passwordLen"
+			],
+			[
+				"re",
+				"required\tAttr"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"bu",
+				"form__button"
+			],
+			[
+				"mar",
+				"margin\tproperty"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"me",
+				"meta\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package co",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/nginx/docs/project/resources/views/auth/register.blade.php",
+		"/C/nginx/docs/project/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+		"/C/nginx/docs/project/config/auth.php",
+		"/C/nginx/docs/project/routes/web.php",
+		"/C/nginx/docs/project/app/Http/Controllers/Controller.php",
+		"/C/Study/University/Practice/project/src/utils/database.php",
+		"/C/Study/University/Practice/project/src/config/config.php",
+		"/C/Study/University/Practice/project/src/templates/main.tpl.php",
+		"/C/Study/University/Practice/project/src/pages/save_feedback_page.php",
+		"/C/Study/University/Practice/project/web/index.php",
+		"/C/Study/University/Frontend/Lw/web-development/lw10/database.sql",
+		"/C/Study/University/Frontend/Lw/web-development/lw11/src/templates/main.tpl.php",
+		"/C/nginx/docs/project/vendor/composer/autoload_real.php",
+		"/C/nginx/docs/project/vendor/autoload.php",
+		"/C/nginx/docs/project/public/index.php",
+		"/C/nginx/docs/project/resources/auth/register.blade.php",
+		"/C/nginx/docs/project/resources/views/welcome.blade.php",
+		"/C/nginx/blog/public/index.php",
+		"/C/nginx/blog/server.php",
+		"/C/Study/University/Практика/project/src/pages/save_feedback_page.php",
+		"/C/Study/University/Практика/project/src/pages/feedbacks_list_page.php",
+		"/C/Study/University/Практика/project/src/utils/database.php",
+		"/C/Study/University/Практика/project/src/templates/main.tpl.php",
+		"/C/Study/University/Практика/project/src/config/config.php",
+		"/C/Study/University/Практика/project/web/index.php",
+		"/C/Study/University/Практика/project/src/common.inc.php",
+		"/C/Study/University/Практика/project/src/templates/feedbacks.tpl.php",
+		"/C/Study/University/Практика/project/src/utils/template.php",
+		"/C/Study/University/Frontend/Lw/web-development/lw11/src/schema/database.sql",
+		"/D/Study/University/Практика/project/web/index.php",
+		"/D/Study/University/Практика/тестирую/css/style.css",
+		"/D/Study/University/Практика/project/src/templates/main.tpl.php",
+		"/D/Study/University/Практика/тестирую/index.html",
+		"/D/Study/University/Практика/тестирую/form_handler.php",
+		"/D/Study/University/Frontend/Lw/web-development/lw11/src/templates/main.tpl.php",
+		"/D/Study/University/Практика/project/src/pages/save_feedback_page.php",
+		"/D/Study/University/Frontend/Lw/web-development/lw6/index.html",
+		"/D/Study/University/Практика/project/src/common.inc.php",
+		"/D/Study/University/Практика/project/src/utils/template.php",
+		"/D/Study/University/Практика/project/src/utils/request.php",
+		"/D/Study/University/Практика/project/src/utils/database.php",
+		"/D/Study/University/Практика/project/src/templates/feedbacks.tpl.php",
+		"/D/Study/University/Практика/project/src/pages/feedbacks_list_page.php",
+		"/D/Study/University/Практика/project/src/config/config.php",
+		"/D/Study/University/Frontend/Lw/web-development/lw11/src/config/config.php"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
