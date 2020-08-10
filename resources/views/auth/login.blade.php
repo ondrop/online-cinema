@@ -47,7 +47,7 @@
           </button>
           @if (Route::has('password.request'))
             <a class="forgot-password auth-btn-case__item" href="#">
-              {{ __('Forgot Your Password?') }}
+              Forgot&nbsp;Your&nbsp;Password?
             </a>
           @endif
         </div>

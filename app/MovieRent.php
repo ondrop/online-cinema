@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades;
 use Request;
 use Carbon\Carbon;
+use Jenssegers\Agent\Agent;
 
 
 /**
@@ -64,9 +65,16 @@ class MovieRent extends Model
                  ->join('films_genre', 'films_genre.genre_id', '=', 'films.genre_id')
                  ->join('films_country', 'films_country.country_id', '=', 'films.country_id')
                  ->join('films_release_year', 'films_release_year.release_year_id', '=', 'films.release_year_id')
-                 ->select('films.*', 'films_genre.genre', 'films_country.country', 'films_release_year.release', 'films_release_year.release_year')
+                 ->select('films.*', 'films_genre.genre', 'films_country.country', 'films_release_year.release', 'films_release_year.release_year', 'movie_rent.delete_after')
                  ->where('user_id', $user->id)
-                 ->paginate($count);
+                 ->when($count, function($query, $count) {
+                    $agent = new Agent();
+                    if (($agent->isMobile()) || ($agent->isTablet())) {
+                        return $query->simplePaginate($count);
+                    } else {
+                        return $query->paginate($count);
+                    }
+                });
     }
 
 }

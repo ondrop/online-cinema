@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="category-home category-home_overflow_hidden">
-  <div class="films-page-background category-home__item"></div>
+  <div class="films-page-background films-page-background_position category-home__item films-page-background_size films-page-background_size_s"></div>
+  <div class="background-sign background-sign-shadow background-sign_size_s background-sign_size_m">grid page</div>
+  <div class="background-sign background-sign_size_s">grid page</div>
   <div class="head-block category-home__head-block category-home__item category-home__head-block_size category-home__head-block_display_flex">
     @include('includes.side_bar')
     <div class="films-block head-block__films-block head-block__films-block_size_m">
@@ -12,7 +14,7 @@
       @if (!$films[0])
         <div class="films-block-header films-block__films-block-header films-block__item">
           <div class="header-text-case shows-block-header__item shows-block-header__item_size_m shows-block-header__item_size_s">
-            <span class="header-text-case__item  shows-block-header-text_display_block">Фильмы не найдены</span>
+            <span class="header-text-case__item  shows-block-header-text_display_block">The Films are not found</span>
           </div>
         </div>
       @else
@@ -35,13 +37,16 @@
               </div>
             </div>
             <div class="sort-button-case sort-button-case_display_grid sort-button-case_size">
-              <button onclick="document.getElementById('sort_dropdown').classList.toggle('show-dropdown-menu');" class="dropdown-button sort-button sort-button-case__sort-button sort-button_transition">
-                Sort by
-              </button>
-              <div id="sort_dropdown" class="dropdown-menu sort-button-case__dropdown-menu dropdown-menu_size">
-                <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country')]) }}">По порядку</a>
-                <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country'), 'sort' => 'have_bought', 'search_value' => Request::input('search_value')]) }}">По популярности</a>
-                <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country'), 'sort' => 'release', 'search_value' => Request::input('search_value')]) }}">По дате выхода</a>
+              <div class="sort-sropdown-case">
+                <button id="sort-first" class="dropdown-button sort-button sort-button-case__sort-button sort-button_transition">
+                  Sort by
+                  <i class="fas fa-caret-down"></i>
+                </button>
+                <div id="sort-first-dropdown" class="dropdown-menu sort-button-case__dropdown-menu dropdown-menu_size">
+                  <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country')]) }}">in order</a>
+                  <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country'), 'sort' => 'have_bought', 'search_value' => Request::input('search_value')]) }}">on popularity</a>
+                  <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country'), 'sort' => 'release', 'search_value' => Request::input('search_value')]) }}">on the release date</a>
+                </div>
               </div>
             </div>
             <div class="pagination-case films-block-header-case__pagination-case">
@@ -67,7 +72,7 @@
                       {{ $film->genre . ', ' . $film->country . ', ' . $film->release_year }}
                     </span>
                     <span class="film-time film-info-block__item film-info-block__item_display_block">
-                      <i class="film-time-icon film-time__item"></i>
+                      <i class="far fa-clock"></i>
                       {{ $film->time }}
                     </span>
                   </div>
@@ -87,13 +92,16 @@
               </div>
             </div>
             <div class="sort-button-case sort-button-case_display_grid sort-button-case_size">
-              <button onclick="document.getElementById('sort_dropdown_second').classList.toggle('show-dropdown-menu');" class="dropdown-button sort-button sort-button-case__sort-button sort-button_transition">
-                Sort by
-              </button>
-              <div id="sort_dropdown_second" class="dropdown-menu sort-button-case__dropdown-menu dropdown-menu_size">
-                <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country')]) }}">По порядку</a>
-                <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country'), 'sort' => 'have_bought']) }}">По популярности</a>
-                <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country'), 'sort' => 'release']) }}">По дате выхода</a>
+              <div class="sort-sropdown-case">
+                <button id="sort-second" class="dropdown-button sort-button sort-button-case__sort-button sort-button_transition">
+                  Sort by
+                  <i class="fas fa-caret-up"></i>
+                </button>
+                <div id="sort-second-dropdown" class="dropdown-menu sort-button-case__dropdown-menu sort-button-case__dropdown-menu-up dropdown-menu_size">
+                  <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country')]) }}">in order</a>
+                  <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country'), 'sort' => 'have_bought']) }}">on popularity</a>
+                  <a class="dropdown-menu__item dropdown-menu__item_transition" href="{{ route($route, ['genre' => Request::input('genre'), 'release_year' => Request::input('release_year'), 'country' => Request::input('country'), 'sort' => 'release']) }}">on the release date</a>
+                </div>
               </div>
             </div>
             <div class="pagination-case films-block-header-case__pagination-case">
@@ -105,5 +113,7 @@
     </div>
   </div>   
 </div>
+
+
 
 @endsection

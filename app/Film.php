@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Request;
+use Jenssegers\Agent\Agent;
 /**
  * @property integer $id
  * @property integer $genre_id
@@ -115,7 +116,14 @@ class Film extends Model
                     }, function ($query) {
                         return $query->orderBy('film_name');
                     })
-                    ->paginate($count);
+                    ->when($count, function($query, $count) {
+                        $agent = new Agent();
+                        if (($agent->isMobile()) || ($agent->isTablet())) {
+                            return $query->simplePaginate($count);
+                        } else {
+                            return $query->paginate($count);
+                        }
+                    });
         return [
             'films' => $films,
             'filter_name' => $filter_name,
@@ -144,7 +152,14 @@ class Film extends Model
                     }, function ($query) {
                         return $query->orderBy('film_name');
                     })
-                    ->paginate($count);
+                    ->when($count, function($query, $count) {
+                        $agent = new Agent();
+                        if (($agent->isMobile()) || ($agent->isTablet())) {
+                            return $query->simplePaginate($count);
+                        } else {
+                            return $query->paginate($count);
+                        }
+                    });
         return [
             'films' => $films,
             'search_value' => $search_value,

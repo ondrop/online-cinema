@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades;
 use Request;
 use Illuminate\Support\Facades\Auth;
+use Jenssegers\Agent\Agent;
 
 /**
  * @property string $film_name
@@ -55,7 +56,14 @@ class PurchasedFilms extends Model
                  ->join('films_release_year', 'films_release_year.release_year_id', '=', 'films.release_year_id')
                  ->select('films.*', 'films_genre.genre', 'films_country.country', 'films_release_year.release', 'films_release_year.release_year') 
                  ->where('user_id', $user->id)
-                 ->paginate($count);
+                 ->when($count, function($query, $count) {
+                    $agent = new Agent();
+                    if (($agent->isMobile()) || ($agent->isTablet())) {
+                        return $query->simplePaginate($count);
+                    } else {
+                        return $query->paginate($count);
+                    }
+                });
     }
 
 }

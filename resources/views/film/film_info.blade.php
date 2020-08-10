@@ -2,7 +2,9 @@
 
 @section('content')
 <div class="category-home category-home_overflow_hidden">
-  <div class="film-info-background category-home__item"></div>
+  <div class="film-info-background category-home__item films-page-background_size films-page-background_size_s" style="content: url('/storage/films_image/{{ $film->id }}/{{ $film->id }}_3.jpg')"></div>
+  <div class="background-sign background-sign-shadow background-sign_size_s background-sign_size_m background-sign_size_l">movie details</div>
+  <div class="background-sign background-sign_size_s">movie details</div>
   <div class="head-block film-page__head-block category-home__head-block category-home__item category-home__head-block_size category-home__head-block_display_flex">
     @include('includes.side_bar')
     <div class="film-details-block head-block__film-details-block head-block__films-block_size_m head-block__films-block_size_s">
@@ -34,11 +36,11 @@
             </span>
             <div class="share-case film-description__share-case film-info-block__item">
               Share: 
-              <a href="" class="share-logo share-logo-facebook share-case__item share-case__item_size_s share-logo_transition"></a>
-              <a href="" class="share-logo share-logo-twitter share-case__item share-case__item_size_s share-logo_transition"></a>
-              <a href="" class="share-logo share-logo-instagram share-case__item share-case__item_size_s share-logo_transition"></a>
-              <a href="" class="share-logo share-logo-pinterest share-case__item share-case__item_size_s share-logo_transition"></a>
-              <a href="" class="share-logo share-logo-vimeo share-case__item share-case__item_size_s share-logo_transition"></a>
+              <a href="" class="share-logo share-case__item share-logo_transition fab fa-facebook-square"></a>
+              <a href="" class="share-logo share-case__item share-logo_transition fab fa-twitter"></a>
+              <a href="" class="share-logo share-case__item share-logo_transition fab fa-instagram"></a>
+              <a href="" class="share-logo share-case__item share-logo_transition fab fa-pinterest"></a>
+              <a href="" class="share-logo share-case__item share-logo_transition fab fa-vimeo-v"></a>
             </div>
           </div>
         </div>
@@ -60,9 +62,9 @@
     </div>
     <div class="modal-body modal__item modal-body_display_flex">
       <div class="modal-body-buy modal-body__item modal-body__item_size_s">
-        <div class="modal-body-buy-title modal-body-buy__item">Покупка</div>
+        <div class="modal-body-buy-title modal-body-buy__item">Purchase</div>
         <div class="modal-body-buy-text modal-body-buy__text modal-body-buy__item">
-          Фильм доступен всегда, количество просмотров не ограничено
+          The film is avaliable forever, number of views is not limited
         </div>
         @if (Auth::check())
           <a href="{{ route('thanks_page_buy', ['film_id' => $film->id]) }}" class="buy-btn-case buy-btn-case_position buy-btn-case_display_block buy-btn-case_size">
@@ -75,9 +77,9 @@
         @endif
       </div>
       <div class="modal-body__item modal-body__item_size_s">
-        <div class="modal-body-buy-title modal-body-buy__item">Аренда</div>
+        <div class="modal-body-buy-title modal-body-buy__item">Rent</div>
         <div class="modal-body-buy-text modal-body-buy__text modal-body-buy__item">
-          30 дней для начала просмотра, и 48 часов, чтобы его завершить
+          30 days to start watching, and 48 hours to finish the film
         </div>
         @if (Auth::check())
           <a href="{{ route('thanks_page_rent', ['film_id' => $film->id]) }}" class="buy-btn-case buy-btn-case_position buy-btn-case_display_block buy-btn-case_size">

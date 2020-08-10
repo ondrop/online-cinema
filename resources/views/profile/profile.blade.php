@@ -26,13 +26,13 @@
           @if (!$rent[0] && !$purchased[0])
             <div class="tab-pane-films-header tab-pane-films__films-block-header tab-pane-films__item">
               <div class="tab-pane-films-header__item tab-pane-films-header__item_display_grid header-text-case shows-block-header__item shows-block-header__item_size_m shows-block-header__item_size_s shows-block-header__item_size_x">
-                <span class="header-text-case__item shows-block-header-text shows-block-header-text_display_block tab-pane-header_text-size_m">Фильмы не найдены</span>
+                <span class="header-text-case__item shows-block-header-text shows-block-header-text_display_block tab-pane-header_text-size_m">The Films are not found</span>
               </div>
             </div>
           @else  
             <div class="tab-pane-films-header tab-pane-films__films-block-header tab-pane-films__item">
               <div class="tab-pane-films-header__item tab-pane-films-header__item_display_grid header-text-case shows-block-header__item shows-block-header__item_size_m shows-block-header__item_size_s shows-block-header__item_size_x">
-                <span class="tab-pane-films-header-text header-text-case__item shows-block-header-text shows-block-header-text_display_block tab-pane-header_text-size_m">Мои Фильмы:</span>
+                <span class="tab-pane-films-header-text header-text-case__item shows-block-header-text shows-block-header-text_display_block tab-pane-header_text-size_m">My films:</span>
                 <div class="rent-pagination_position pagination-case films-block-header-case__pagination-case">
                   {{ $rent->withQueryString()->links() }}
                 </div>
@@ -42,7 +42,7 @@
             @if ($rent[0])
               <div class="tab-pane-films-header tab-pane-films__films-block-header tab-pane-films__item">
                 <div class="tab-pane-films-header__item tab-pane-films-header__item_display_grid header-text-case shows-block-header__item shows-block-header__item_size_m shows-block-header__item_size_s shows-block-header__item_size_x">
-                  <span class="header-text-case__item shows-block-header-text_display_block">Арендованные:</span>
+                  <span class="header-text-case__item shows-block-header-text_display_block">Rented:</span>
                   
                 </div>
               </div>
@@ -51,7 +51,10 @@
                   <div class="tab-pane-films-info-case tab-pane-films-body__item tab-pane-films-body__item_size">
                     <div class="tab-pane-films-info tab-pane-films-info-case__item tab-pane-films-info_display_flex tab-pane-films-info_size_s">
                       <a href="{{ route('film_page', ['id' => $film->id]) }}" class="tab-pane-films-info__name tab-pane-films-info__item tab-pane-films-info__item_display_block">{{ $film->film_name }}</a>
-                      <div class="tab-pane-films-info__category tab-pane-films-info__item">{{ $film->genre . ', ' . $film->country . ', ' . $film->release_year }}</div>    
+                      <div class="tab-pane-films-info__category tab-pane-films-info__item">До:  
+                        <span class="rent-time">{{ $film->delete_after . ', ' }}</span>
+                        {{ $film->genre . ', ' . $film->country . ', ' . $film->release_year }}
+                      </div>    
                     </div>
                   </div>
                 <?php endforeach ?>
@@ -61,7 +64,7 @@
             @if ($purchased[0])
               <div class="tab-pane-films-header tab-pane-films__films-block-header tab-pane-films__item">
                 <div class="tab-pane-films-header__item tab-pane-films-header__item_display_grid header-text-case shows-block-header__item shows-block-header__item_size_m shows-block-header__item_size_s shows-block-header__item_size_x">
-                  <span class="header-text-case__item shows-block-header-text_display_block">Купленные:</span>
+                  <span class="header-text-case__item shows-block-header-text_display_block">Bought:</span>
                 </div>
               </div>
               <div class="tab-pane-films__body tab-pane-films-body">
@@ -80,7 +83,7 @@
         </div>
         
 
-        <form id="tab-pane-setting" method="POST" action="{{ route('change_profile') }}" class="tab-pane tab-pane-forn_position tab-content__item auth-form auth__auth-form auth__item tab-content__item_display_none <?php echo ($errors->hasBag()) ? 'show-tab-pane' : ''; ?>">
+        <form id="tab-pane-setting" method="POST" action="{{ route('change_profile') }}" class="tab-pane tab-pane-form_position tab-content__item auth-form auth__auth-form auth__item tab-content__item_display_none <?php echo ($errors->hasBag()) ? 'show-tab-pane' : ''; ?>">
           @csrf
 
           <div class="profile-form-block profile-form-block_display_flex auth-form-block auth-form__item">

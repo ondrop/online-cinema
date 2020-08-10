@@ -34,7 +34,7 @@ class CheckFilterExist
             $input['genre'] = null;
         }
 
-        if ((array_key_exists('country', $input))  && ($input['country'] != 'Country')) {
+        if ((array_key_exists('country', $input)) && ($input['country'] != 'Country')) {
             $header_name = $header_name . $input['country'] . ', ';   
         } else {
             $input['country'] = null;
